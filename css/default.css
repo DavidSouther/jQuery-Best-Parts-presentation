@@ -32,7 +32,7 @@ h4 { color: #ddd; font-size: 36px; }
 
 h3, h4, h5 { display: inline; }
 
-.right { float: right; }
+.right { float: right; text-align: right; }
 h3 + .right { padding-top: 7px; }
 
 img { opacity: 0.9; }
@@ -110,6 +110,10 @@ p.footer { font-size: 0.7em; text-align: right; margin-top: 4em; }
 .step {
   width: 820px;
   padding: 40px;
+}
+
+.notes {
+	display: none;
 }
 
 /* fade out inactive slides */
