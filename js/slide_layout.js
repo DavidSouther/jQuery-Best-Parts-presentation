@@ -1,4 +1,4 @@
-impress.steps = {
+steps = {
 	title: { x: -400, y: -600, scale: 4 },
 	features_link: { x: 3500, y: -1200, scale: 4.5 },
 	dom_link: { x: 3500, y: -850, scale: 4.5 },
@@ -24,8 +24,8 @@ impress.steps = {
 	dom_selectors: {x: -3800, y: -3500, scale: 3, rotate: -270 },
 	dom_manipulation: {x: -4100, y: -3500, scale: 3, rotate: -270 },
 	selectors_overview: {x: -3500, y: -800, scale: 3, rotate: -270 },
-	selectors_sizzle: {x: -3800, y: -800, scale: 3, rotate: -270 },
-	selectors_sizzle_custom: {x: -4500, y: -800, scale: 3, rotate: -270 },
+	selectors_sizzle: {x: -3500, y: -800, scale: 3, rotate: -270 },
+	selectors_sizzle_custom: {x: -4300, y: -800, scale: 3, rotate: -270 },
 
 	selectors: {x: -4500, y: 2200, scale: 3, rotate: -270 },
 	manipulation: {x: -4500, y: 5000, scale: 3, rotate: -270 },
@@ -44,6 +44,8 @@ impress.steps = {
 	outro: {x: -500, y: 1500, z: -500, scale: 3, rotate: {x: 45} },
 	thanks: {x: 500, y: 2000, z: 1500, scale: 3, rotate: {x: 55} },
 	bibliography: {x: 1000, y: 3000, z: 3000, scale: 3, rotate: {x: 60} },
-	
+
 	overview: { x: 3400, y: 1000, scale: 16 }
 };
+
+
