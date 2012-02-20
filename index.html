@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<!--
+	Google I/O 2011 HTML slides template
+
+	Authors: Luke Mahé (code)
+			 Marcin Wichary (code and design)
+			 Dominic Mazzoni (browser compatibility)
+			 Charles Chen (ChromeVox support)
+
+	URL: http://code.google.com/p/io-2011-slides/
+-->
+
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>jQuery: The Best Parts</title>
+	<link rel="stylesheet" href="css/font.css" />
+	<link rel="stylesheet" href="css/default.css" />
+</head>
+
+<body>
+
+<div id="impress" class="impress-not-supported">
+<div id="fm1" class="fallback-message hidden">
+	<p>Your browser <b>doesn't support the features required</b> by impress.js,
+		so you are presented with a simplified version of this presentation.</p>
+	<p>For the best experience please use the latest <b>Chrome</b> or
+		<b>Safari</b> browser. Firefox 10 (to be released soon)
+		will also handle it.</p>
+</div>
+<div id="fm2" class="fallback-message">
+	<p>If you have fast machine and recent Google Chrome or Safari installed,
+		please check <a href="3d/index.html">a bit more "moving" version of that presentation</a></p>
+	<p style="text-align:center"><big>Otherwise, scroll down to see the slides</big></p>
+</div>
+
+<div id="title" class="step">
+	<h1><img src="http://upload.wikimedia.org/wikipedia/en/9/9e/JQuery_logo.svg" alt="jQuery" width="300" />
+		<span class="right">Best Parts</span></h1>
+	<h3 class="right">David Souther</h3>
+</div>
+
+<!-- Contents -->
+	<div id="features_link" class="step">
+		<h3><a href="#features">Language Features</a></h3>
+	</div>
+	<div id="dom_link" class="step">
+		<h3><a href="#dom">DOM Manipulation</a></h3>
+	</div>
+	<div id="3rd_party_link" class="step">
+		<h3><a href="#3rd_party">UI &amp; Plugins</a></h3>
+	</div>
+
+<!-- Philosophy -->
+	<div id="philosophy" class="step">
+		<h2><em>Write Less, Do More</em></h2>
+	</div>
+	<div id="philosophy_expressive" class="step">
+		<h3>Expressive</h3>
+		<span class="right">Fewer lines do more, concisely</span>
+	</div>
+	<div id="philosophy_functional" class="step">
+		<h3>Functional</h3>
+		<span class="right">Closures for data hiding</span><br />
+		<span class="right">Method Chaining</span>
+	</div>
+	<div id="philosophy_semantic" class="step">
+		<h3>Semantic</h3>
+		<span class="right">MVC is DOM, CSS, jQuery</span>
+	</div>
+
+<!-- Language features -->
+	<div id="each_object" class="step">
+		<h3>$.each (object)</h3>
+		<iframe
+			style="width: 100%; height: 400px"
+			src="http://jsfiddle.net/southerd/pnybn/embedded/js,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/pnybn/">http://jsfiddle.net/southerd/pnybn/</a></p>
+	</div>
+
+	<div id="each_array" class="step">
+		<h3>$.each (array)</h3>
+		<iframe
+			style="width: 100%; height: 400px"
+			src="http://jsfiddle.net/southerd/88hC6/embedded/js,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/88hC6/">http://jsfiddle.net/southerd/88hC6/</a></p>
+	</div>
+
+	<div id="proxy" class="step">
+		<h3>$.proxy</h3>
+		<iframe
+			style="width: 100%; height: 300px"
+			src="http://jsfiddle.net/southerd/mXGjf/embedded/js,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/mXGjf/">http://jsfiddle.net/southerd/mXGjf/</a></p>
+	</div>
+
+	<div id="extend" class="step">
+		<h3>$.extend (mixin)</h3>
+		<iframe
+			style="width: 100%; height: 500px"
+			src="http://jsfiddle.net/southerd/563Dc/embedded/js,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/563Dc/">http://jsfiddle.net/southerd/563Dc/</a></p>
+	</div>
+
+	<div id="widget" class="step">
+		<h3>$.widget (inheritance)</h3>
+		<iframe
+			style="width: 100%; height: 500px"
+			src="http://jsfiddle.net/southerd/-/embedded/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
+	</div>
+
+	<div id="callback_chaining" class="step">
+		<h3>$.deferred</h3>
+	</div>
+	<div id="callback_chaining_multiple" class="step">
+		<p>Chain multiple callbacks</p>
+	</div>
+	<div id="callback_chaining_consistent" class="step">
+		<p>Treats synchronous and asynchronous events consistently</p>
+	</div>
+	<div id="callback_chaining_expressive" class="step">
+		<p>Most expressive Deferred implementation</p>
+		<p class="right smaller">Google Closure: Poor API naming</p>
+		<p class="right smaller">Dojo: when takes single event</p>
+		<p class="right smaller">Ext: Doesn't exist </p>
+	</div>
+
+	<div id="deferred" class="step">
+		<h3>$.deferred</h3>
+		<iframe
+			style="width: 100%; height: 400px"
+			src="http://jsfiddle.net/southerd/ZWxzA/embedded/js,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/ZWxzA/">http://jsfiddle.net/southerd/ZWxzA/</a></p>
+	</div>
+
+<!-- DOM -->
+	<div id="dom" class="step">
+		<h2>DOM Manipulation</h2>
+	</div>
+	<div id="dom_selectors" class="step">
+		<h3>Selectors</h3>
+	</div>
+	<div id="dom_manipulation" class="step">
+		<h3>Manipulation</h3>
+	</div>
+
+	<div id="selectors_overview" class="step">
+		<h2>Selectors</h2>
+	</div>
+	<div id="selectors_sizzle" class="step">
+		<h3>Sizzle Engine</h3>
+		<span class="right">Full CSS3.1 Compliance</span>
+	</div>
+	<div id="selectors_sizzle_custom" class="step">
+		<h3>Custom Selectors</h3>
+		<br /><span class="right">
+				  <code>[name!="value"]</code>
+			<br /><code>:contains("text")</code>
+			<br /><code>next ~ siblings</code>
+			<br /><code>:odd, :selected</code>
+		</span>
+	</div>
+
+	<div id="selectors" class="step">
+		<h3>Selectors</h3>
+		<iframe
+			style="width: 100%; height: 650px"
+			src="http://jsfiddle.net/southerd/XpsYv/embedded/html,css,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/XpsYv/">http://jsfiddle.net/southerd/XpsYv/</a></p>
+	</div>
+
+	<div id="manipulation" class="step">
+		<h3>Manipulation</h3>
+		<iframe
+			style="width: 100%; height: 650px"
+			src="http://jsfiddle.net/southerd/-/embedded/html,css,result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
+	</div>
+
+<!-- 3rd party -->
+	<div id="3rd_party" class="step">
+		<h2>Plugins, UI, Events</h2>
+	</div>
+
+	<div id="plugins" class="step">
+		<h3>Plugins</h3>
+	</div>
+	<div id="plugins_ecosystem" class="step">
+		<h4>Diverse 3rd party ecosystem</h4>
+	</div>
+	<div id="plugins_good" class="step">
+		<h4>Excellent Plugins</h4>
+		<ul><li>DataTables (<a href="http://datatables.net">http://datatables.net</a>)</li>
+			<li>Validation (<a href="http://docs.jquery.com/Plugins/Validation">http://docs.jquery.com/Plugins/Validation</a>)</li>
+			<li>JMTT (<a href="http://davidsouther.com/tag/jmtt">http://davidsouther.com/tag/jmtt</a>)</li></ul>
+	</div>
+	<div id="plugins_bad" class="step">
+		<h4>Terrible plugins</h4>
+		<ul><li>Google 10 minutes, read source for 20, decide.</li></ul>
+	</div>
+
+
+	<div id="ui" class="step">
+		<h3>UI Overview</h3>
+	</div>
+	<div id="ui_helpers" class="step">
+		<h4>UI Helpers</h4>
+		<ul><li>Position (<a href="http://jqueryui.com/demos/position/default.html">http://jqueryui.com/demos/position/default.html</a>)</li>
+			<li>Drag and Drop (<a href="http://jqueryui.com/demos/droppable/photo-manager.html">http://jqueryui.com/demos/droppable/photo-manager.html</a>)</li>
+			<li>Resizable (<a href="http://jqueryui.com/demos/resizable/default.html">http://jqueryui.com/demos/resizable/default.html</a>)</li></ul>
+	</div>
+	<div id="ui_components" class="step">
+		<h4>UI Components</h4>
+		<ul><li>Tabs (<a href="http://jqueryui.com/demos/tabs/#mouseover">http://jqueryui.com/demos/tabs/#mouseover</a>)</li>
+			<li>Accordion (<a href="http://jqueryui.com/demos/accordion/#fillspace">http://jqueryui.com/demos/accordion/#fillspace</a>)</li>
+			<li>Datepicker (<a href="http://jqueryui.com/demos/datepicker/#default">http://jqueryui.com/demos/datepicker/#default</a>)</li></ul></li>
+	</div>
+	<div id="ui_themes" class="step">
+		<h4>Themes</h4>
+		<ul><li>Themeroller (<a href="http://jqueryui.com/themeroller/">http://jqueryui.com/themeroller/</a>)</li></ul>
+	</div>
+
+	<div id="events" class="step">
+		<h3>Events</h3>
+	</div>
+
+<!-- Outro -->
+	<div id="outro" class="step" data-rotate-x="90">
+		<h2><em>Write Less, Do More</em></h2>
+	</div>
+
+	<div id="thanks" class="step">
+		<h3>Thanks</h3>
+		<p>Drew Tayaman, Justin Grant</p>
+		<p>jQuery</p>
+		<p>impress.js (Bartek Szopka @bartaz)
+	</div>
+
+	<div id="bibliography" class="step">
+		<h3>Bibliography</h3>
+		<p>jQuery Documentation - <a href="http://docs.jquery.com/Main_Page">http://docs.jquery.com/Main_Page</a></p>
+		<p>jQuery Novice to Ninja - <a href="http://www.sitepoint.com/books/jquery1/">http://www.sitepoint.com/books/jquery1/</a></p>
+		<p>Hacking at 0301: Understanding jQuery UI widgets - <a href="http://bililite.nfshost.com/blog/understanding-jquery-ui-widgets-a-tutorial/">http://bililite.nfshost.com/blog/understanding-jquery-ui-widgets-a-tutorial/</a></p>
+	</div>
+
+  <div id="overview" class="step"></div>
+  <div class="hint"><p>Use spacebar,  arrow keys, or click to navigate</p></div>
+</div>
+
+<script src="js/impress.js"></script>
+<script src="js/slide_layout.js"></script>
+<script src="js/default.js"></script>
+</body>
+</html>
