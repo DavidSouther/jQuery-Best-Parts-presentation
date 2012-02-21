@@ -200,6 +200,7 @@
 			<p>Extend as a function is fairly simple, it just merges several objects together.
 			<p>To get inheritance, we want to use {dollar}{dot}{widget} from jquery ui.
 			<p>The name is a bit of a misnomer at first blush- widgets and plugins in jQuery are not necessarily for wider consumption, but just overloaded words to describe modular pieces of code here.
+			<p>This will require pulling in the jQuery UI project in addition to the jQuery project, but there are quite a few components in UI that we'll cover in a bit and you may want anyway.
 <!-- TODO -->
 
 		</div>
@@ -338,13 +339,24 @@
 			<p>[[Click to CSS tab]]
 			<p>We need a little bit of CSS, as well.
 			<p>[[Click to Result tab]] 
-			Finally, here is the rendered page. You can see the empty black leaves, the red interior nodes, and the data.
+			<p>Finally, here is the rendered page. You can see the empty black leaves, the red interior nodes, and the data.
 			<p>Enough background, let's get to the jQuery goodies.
-			
-			Let's take a look at what some of those selectors return.
+			<p>Let's take a look at what some of those selectors return.
 			<p>I have a couple selectors ready here.
-			
-			This first selector is going to add 
+			<p>This first selector is going to add highlights to all the leaf nodes of the tree, which in this red black tree are just placeholders.
+			<p>[[Click first link]]
+			<p>The selector here is a compound selector, looking for all elements with class black and the pseudoattribute of being completely empty.
+			<p>[[Click clear link]]
+			<p>The second selector here is going to find all nodes with data.
+			<p>In our red black tree, every internal node has data of some sort.
+			<p>In selectors, this means we want any red node, and every black node that is not a leaf, or, every black node that is not empty.
+			<p>[[Click clear link]]
+			<p>The last selector is an unfortunately complicated selector to choose sibling nodes that are both red.
+			<p>This operation is important in rebalancing our tree later, but for now shows some of the more powerful selection tools.
+			<p>CSS doesn't give us a way to select multiple things at the same level of a DOM tree.
+			<p>Instead, we use the sibling selector to find pairs of red nodes, then use jQuery's add method to put more things in our list of matched elements.
+			<p>In this case, we add a node whose previous sibling is red, and all of that node's siblings (the previous red node, in this case).
+			<p>Any questions on these selectors?
 		</div>
 	</div>
 
@@ -356,21 +368,25 @@
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
 		<div class="notes"><pre>
-		
+			<p>Now that we've seen a bit of how selectors work, we'll go through an example of using selectors to add a node to our red black tree and rebalance the tree.
+			<p>We start off by making a couple helpers.
+			<p>These are jQuery plugins, that will add new behaviors to use in our jQuery selectors.
+			<p>Next, we have our data to insert into the tree.
+			<p>We start out by finding the node we want to insert at, this is a flattened binary find operation.
+			<p>
 		</div>
 	</div>
 
 <!-- 3rd party -->
 	<div id="3rd_party" class="step">
-		<h2>Plugins, UI, Events</h2>
+		<h2>Plugins, UI, Projects</h2>
 		<div class="notes">
 			<p>Now that we've covered some of the more expressive features of jQuery, I'd like to take some time to talk about the 3rd party ecosystem around jQuery.
 			<p>There's just too much here to do code examples for all of this, so instead I'm going to talk about what is available and include links for you to follow up with later, as needed.
 			<p>Let's take a look at some of this.
 			<p>jQuery provides a very powerful mechanism for extending the base functionality, and this has let a vast number of people write plugins for jQuery.
 			<p>There is a project separate from jQuery core called jQuery UI, which  provides a handful of very useful interface utilities and a few interface components, as well as a powerful theming library.
-			<p>Finally, I'll close by presenting some of jQuery's eventing capabilities.
-			<p>While I could have covered eventing at the beginning with language features, because it really is a language utility, I've included it here to start a discussion on yet another way to design a jQuery API.	
+			<p>Finally, I'll close with a discussion of how to start using jQuery in your projects today.
 		</div>
 	</div>
 
@@ -454,15 +470,45 @@
 		</div>
 	</div>
 
-	<div id="events" class="step">
-		<h3>Events</h3>
-		<iframe
-			style="width: 100%; height: 650px"
-			src="http://jsfiddle.net/southerd/-/embedded/html,css,result/presentation/"
-			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
+	<div id="projects" class="step">
+		<h3>In Your Project</h3>
 		<div class="notes">
-			<p>For our last code example, I have here a plugin that uses events purely as its API. 
+			<p>One of the questions I've gotten a couple times while preparing this presentation is how can we start using jQuery today.
+		</div>
+	</div>
+
+	<div id="projects_small" class="step">
+		<p>Small</p>
+		<div class="notes">
+			<p>First, jQuery is very small- the current production release is 31 K, smaller than a jpeg image.
+			<p>You can include it with a project at no significant cost to network latency, page size, or much else.
+		</div>
+	</div>
+	
+	<div id="projects_efficient" class="step">
+		<p>Efficient</p>
+		<div class="notes">
+			<p>jQuery is very efficient.
+			<p>It's got some really smart people doing a lot of work to make sure jQuery does what it does as fast as possible
+		</div>
+	</div>
+
+	<div id="projects_interop" class="step">
+		<p>Interoperable</p>
+		<div class="notes">
+			<p>jQuery plays very well with other libraries, and plays very well across browsers.
+			<p>Whether used piecemeal to augment other libraries, or as an extension on Dojo or Ext layouts, jQuery can make some simple tasks trivial to do.
+			<p>jQuery also takes the headache out from working across browsers.
+			<p>While different browsers may have implemented some features slightly differently (say, html5 datasets), jQuery makes them all just work the same way.
+		</div>
+	</div>
+	
+	<div id="projects_plugin" class="step">
+		<p>Make Plugins</p>
+		<div class="notes">
+			<p>Once you get started using jQuery to add features here and there, you'll see things in a project you need over and over.
+			<p>Learning the jQuery plugin architecture will vault your Javascript development to the next level.
+			<p>To make plugins right requires you to embrace the MVC semantics of DOM, CSS, and javascript, but once you get that paradigm, your sites can really start to pop.
 		</div>
 	</div>
 
@@ -499,10 +545,11 @@
   <div id="overview" class="step">
 		<div class="notes">
 			<p>If you have any questions, feel free to email or IM me.
-			<p>Thank you for your time and attention :)
-		</div>  
+			<p>Thank you for your time :)
+			<p>Are there any final questions?
+		</div>
   </div>
-  <div class="hint"><p>Use spacebar,  arrow keys, or click to navigate</p></div>
+  <div class="hint"><p>Use spacebar, arrow keys, or click to navigate. Press 'n' for speaker notes.</p></div>
 </div>
 
 <script src="js/slide_layout.js"></script>

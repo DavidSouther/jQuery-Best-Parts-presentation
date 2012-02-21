@@ -39,7 +39,10 @@ steps = {
 	ui_helpers: {x: 2000, y: 5900, scale: 3 },
 	ui_components: {x: 2000, y: 7200, scale: 3 },
 	ui_themes: {x: 2000, y: 8100, scale: 3 },
-	events: {x: 5000, y: 5000, scale: 3 },
+	projects: {x: 5000, y: 5000, scale: 3 },
+	projects_small: {x: 5000, y: 5200, scale: 3 },
+	projects_efficient: {x: 5000, y: 5400, scale: 3 },
+	projects_interop: {x: 5000, y: 5600, scale: 3 },
 
 	outro: {x: -500, y: 1500, z: -500, scale: 3, rotate: {x: 45} },
 	thanks: {x: 500, y: 2000, z: 1500, scale: 3, rotate: {x: 55} },
