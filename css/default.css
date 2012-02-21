@@ -8,10 +8,10 @@ body {
 
   color: #97c5e1;
   background: #002570;
-  background: -webkit-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));
-  background:    -moz-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));
-  background:      -o-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));
-  background:         radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));
+  background: -webkit-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 0, 0));
+/*  background:    -moz-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));*/
+/*  background:      -o-radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));*/
+/*  background:         radial-gradient(center bottom, circle farthest-corner, #667bb3, rgb(0, 67, 148), rgb(0, 0, 0));*/
 
   -webkit-font-smoothing: antialiased;
 }
