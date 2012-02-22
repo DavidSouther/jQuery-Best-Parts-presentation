@@ -47,9 +47,9 @@
 	<div id="features_link" class="step">
 		<h3><a href="#features">Language Features</a></h3>
 		<div class="notes">
-			<p>I like to think of jQuery as the API developers need to work quickly and efficiently with the DOM.
-			<p>Where Dojo and Ext have layouts and provide a sometimes very AWT or Swing feel to handling components and layout, jQuery is focused entirely on harnessing the DOM itself to build rich internet applications.
-			<p>I'd like to walk through three areas jQuery helps you the developer make these applications.
+			<p>I like to think of jQuery as the API developers need to work quickly and efficiently within the DOM.
+			<p>Where Dojo and Ext have layouts and provide a sometimes very AWT or Windows Forms feel to handling components and layout, jQuery is focused entirely on harnessing the DOM itself.
+			<p>I'd like to walk through three areas jQuery helps you the developer make rich internet applications.
 			<p>There are some excellent utilities that feel like language features and are the core to the increased expressiveness jQuery enables.
 		</div>
 	</div>
@@ -96,7 +96,7 @@
 		<span class="right">MVC is DOM, CSS, jQuery</span>
 		<div class="notes">
 			<p>The most important part of the jQuery philosophy, though, is the semantics of the MVC model jQuery uses.
-			<p>The DOM is the model, CSS is the view, and jQuery is the controller- one language for each of the domains.
+			<p>The DOM is the model, CSS is the view, and jQuery is the controller- one language for each domains.
 			<p>As I grasped this approach, I became enamoured with jQuery.
 		</div>
 	</div>
@@ -119,6 +119,8 @@
 			<p>Also, by default, inside the iterator function the {this} context is set to the value.
 			<p>In this example we have an object storing our officers on board the Enterprise D, keyed by the position they serve.
 			<p>Our iterator function uses {this} for the value, and so only specifies the name of the first parameter, the key.
+			<p>[[Switch to Result tab]]
+			<p>When we run it, we get about what we'd expect.
 			<p>Any questions about this code?
 		</div>
 	</div>
@@ -135,6 +137,8 @@
 			<p>Since cremembers are a bit more fluid in where they serve, I've just given them a department rather than an actual position.
 			<p>In this example, I use both parameters for the key and value.
 			<p>Notice when iterating over an array, the {key} parameter contains the numerical index in the array.
+			<p>[[Switch to Result tab]]
+			<p>Again, we get just what we'd expect.
 			<p>Any questions on this code?
 		</div>
 	</div>
@@ -143,7 +147,7 @@
 		<h3>$.proxy</h3>
 		<iframe
 			style="width: 100%; height: 300px"
-			src="http://jsfiddle.net/southerd/mXGjf/embedded/js,result/presentation/"
+			src="http://jsfiddle.net/southerd/mXGjf/embedded/js/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/mXGjf/">http://jsfiddle.net/southerd/mXGjf/</a></p>
 		<div class="notes">
@@ -159,6 +163,7 @@
 			<p>In the first example, we use {dollar}{dot}{proxy} to wrap our function with jQuery magic to handle the context correctly.
 			<p>In the second example, we handle the situation using a variable bound in the closure.
 			<p>These are both patterns I've seen over and over in javascript libraries- neither is necessarily better, but I find the {proxy} example to be more readable.
+			<p>I'm not going to run this, but it does again what you'd expect: it's an exact standin for the deprecated &lt;blink&gt; tag.
 			<p>Any questions on this example?
 		</div>
 	</div>
@@ -166,7 +171,7 @@
 	<div id="extend" class="step">
 		<h3>$.extend (mixin)</h3>
 		<iframe
-			style="width: 100%; height: 500px"
+			style="width: 100%; height: 650px"
 			src="http://jsfiddle.net/southerd/563Dc/embedded/js,result/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/563Dc/">http://jsfiddle.net/southerd/563Dc/</a></p>
@@ -204,7 +209,9 @@
 	<div id="callback_chaining" class="step">
 		<h3>$.deferred</h3>
 		<div class="notes">
-			<p>The {deferred} concept is something that's come up quite a few times in Javascript.
+			<p>We're going to shit gears now and talk about asynchronous events in Javascript.
+			<p>Most commonly asynchronous behaviors in javascript are implemented by accepting a single callback function.
+			<p>The {deferred} concept is something that's come up more recently as an extension on a single callback.
 			<p>In short, a {deferred} gives the developer an asynchronous thread of execution in their Javascript program.
 		</div>
 	</div>
@@ -224,9 +231,9 @@
 	</div>
 	<div id="callback_chaining_expressive" class="step">
 		<p>Most expressive Deferred implementation</p>
-		<p class="right smaller">Google Closure: Poor API naming</p>
-		<p class="right smaller">Dojo: when takes single event</p>
-		<p class="right smaller">Ext: Doesn't exist </p>
+		<p class="right smaller">Google Closure: Poor API naming<br />
+			Dojo: when takes single event<br />
+			Ext: Doesn't exist </p>
 		<div class="notes">
 			<p>First, a side-trip through why jQuery has the best deferred implementation today.
 			<p>Google Closure's deferred API has a very awkward naming system compared to jQuery's.
@@ -238,7 +245,7 @@
 	<div id="deferred" class="step">
 		<h3>$.deferred</h3>
 		<iframe
-			style="width: 100%; height: 400px"
+			style="width: 100%; height: 600px"
 			src="http://jsfiddle.net/southerd/ZWxzA/embedded/js,result/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/ZWxzA/">http://jsfiddle.net/southerd/ZWxzA/</a></p>
@@ -264,6 +271,9 @@
 			<p>{when} takes any number of arguments, and returns a deferred that will execute when all those arguments have data.
 			<p>That data can either be a value in the argument, or if the argument is a deferred, the value of the deferred finishing execution.
 			<p>We wrap that operation in some logging messages to see what happens here.
+			<p>[[Switch to Result tab]]
+			<p>Here we have the first call to log
+			<p>And here we see the result after getting the second cached result.
 			<p>Any questions on this code?
 		</div>
 	</div>
@@ -322,7 +332,7 @@
 	<div id="selectors" class="step">
 		<h3>Selectors</h3>
 		<iframe
-			style="width: 100%; height: 650px"
+			style="width: 100%; height: 800px"
 			src="http://jsfiddle.net/southerd/XpsYv/embedded/html,css,result/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/XpsYv/">http://jsfiddle.net/southerd/XpsYv/</a></p>
@@ -358,17 +368,52 @@
 	<div id="manipulation" class="step">
 		<h3>Manipulation</h3>
 		<iframe
-			style="width: 100%; height: 650px"
-			src="http://jsfiddle.net/southerd/-/embedded/html,css,result/presentation/"
+			style="width: 100%; height: 800px"
+			src="http://jsfiddle.net/southerd/7YwdM/embedded/js,result/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
-		<div class="notes"><pre>
+		<p><a href="http://jsfiddle.net/southerd/7YwdM/">http://jsfiddle.net/southerd/7YwdM/</a></p>
+		<div class="notes">
 			<p>Now that we've seen a bit of how selectors work, we'll go through an example of using selectors to add a node to our red black tree and rebalance the tree.
 			<p>We start off by making a couple helpers.
 			<p>These are jQuery plugins, that will add new behaviors to use in our jQuery selectors.
 			<p>Next, we have our data to insert into the tree.
 			<p>We start out by finding the node we want to insert at, this is a flattened binary find operation.
-			<p>
+			<p>When we add a node here, we see jQuery's strength in quickly creating DOM elements- this is a conscise API, rather than dealing with Document{dot}createElement and innerHTML headaches across browsers.
+			<p>For our restructure, we'll need references to the parent and grandparent.
+			<p>Here we do an actual rotation-- notice again how easy jQuery makes it to move these DOM elements around the page.
+			<p>Finally, for the red-black insertion we need to recolor. Those operations are very easy with our plugins we defined above, and they pay off big time in a full implementation.
+			<p>Let's see what happens when we run this. [[Switch to results tab]]
+			<p>[[Press insert button]]
+			<p>Here's our new data.
+			<p>Let's go through this again, this time stopping to look at each step.
+		</div>
+	</div>
+
+	<div id="manipulation_walkthrough" class="step">
+		<h3>Manipulation</h3>
+		<iframe
+			style="width: 100%; height: 800px"
+			src="http://jsfiddle.net/southerd/WrWmS/embedded/result/presentation/"
+			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		<p><a href="http://jsfiddle.net/southerd/WrWmS/">http://jsfiddle.net/southerd/WrWmS/</a></p>
+		<div class="notes">
+			<p>We've got our tree here
+			<p>[[Click find link]] Here's the node we're inserting at.
+			<p>[[Press insert button]]
+			<p>And there it is, but now we have a double-red.
+			<p>We'll need to fix that, so let's grab the parent and grandparent.
+			<p>[[Click ancestors link]]
+			<p>We'll go ahead and rotate the tree.
+			<p>[[Click rotate link]]
+			<p>We've lost a couple nodes...
+			<p>[[Click append link]]
+			<p>But because jQuery had a reference to them, they just got detached from the DOM and added back in here.
+			<p>Let's clean up from our example highlighting
+			<p>[[Click rekey link]]
+			<p>And finally recolor everything so it's correct.
+			<p>[[Click recolor link]]
+			<p>And there we go, we had about a dozen things to do for this operation, and jQuery let us do that without much if any spurious boilerplate code.
+			<p>Any questions?
 		</div>
 	</div>
 
@@ -396,8 +441,8 @@
 		<h4>Diverse 3rd party ecosystem</h4>
 		<div class="notes">
 			<p>Often, there are already excellent 3rd party libraries that will solve some of the common problems you'll face.
-			<p>That said, there are also a lot of terrible code that gets put out because someone else wanted to write the same thing differently.
-			<p>There are a few plugins I'd like to highlight, since the do cover tasks that nearly every web application needs, and I also have some guidelines for finding other plugins.
+			<p>That said, there is also a lot of terrible code that gets put out because someone else wanted to write the same thing differently.
+			<p>There are a few plugins I'd like to highlight, since they do cover tasks that nearly every web application needs, and I also have some guidelines for finding other plugins.
 		</div>
 	</div>
 	<div id="plugins_good" class="step">
@@ -412,13 +457,13 @@
 			<p>JMTT is the jQuery Minimal Tree-Table, a plugin designed to add combined tree and table functionality to websites.
 			<p>It is implemented as a jQuery Widget, and uses the eventing model as its primary API.
 			<p>These are some of the better plugins I've come across and continue to use in jQuery.
-			<p>When I need to evaluate plugins for some other feature, I usually spend about 10 minutes googling to see what others have found.
 		</div>
 	</div>
 	<div id="plugins_bad" class="step">
 		<h4>Terrible plugins</h4>
 		<ul><li>Google 10 minutes, read source for 20, decide.</li></ul>
 		<div class="notes">
+			<p>When I need to evaluate plugins for some other feature, I usually spend about 10 minutes googling to see what others have found.
 			<p>If I do find something, I take about 20 minutes to read through their documentation and source code, to get a feel for whether it will be worth trying to use that plugin.
 			<p>Once I've spent that much time with a plugin, It's pretty easy to decide if it will save time, or if the feature should be implemented fresh.
 		</div>
@@ -438,7 +483,7 @@
 			<li>Drag and Drop (<a href="http://jqueryui.com/demos/droppable/photo-manager.html">http://jqueryui.com/demos/droppable/photo-manager.html</a>)</li>
 			<li>Resizable (<a href="http://jqueryui.com/demos/resizable/default.html">http://jqueryui.com/demos/resizable/default.html</a>)</li></ul>
 		<div class="notes">
-			<p>At its base level, jQuery UI has a variety of helper classes that streamline many issues in HTML/CSS layouts.
+			<p>At its base level, jQuery UI has a variety of helper classes that streamline many issues in HTML and CSS layouts.
 			<p>The Position class provides a myriad of ways to position DOM elements around eachother.
 			<p>The draggable and droppable helpers provide a wealth of Dragn & Drop features for new widgets to grab on to.
 			<p>Resizable, selectable, and sortable are just some of the other helpers UI exposes.
@@ -494,7 +539,7 @@
 			<p>jQuery plays very well with other libraries, and plays very well across browsers.
 			<p>Whether used piecemeal to augment other libraries, or as an extension on Dojo or Ext layouts, jQuery can make some simple tasks trivial to do.
 			<p>jQuery also takes the headache out from working across browsers.
-			<p>While different browsers may have implemented some features slightly differently (say, html5 datasets), jQuery makes them all just work the same way.
+			<p>While different browsers may have implemented some features slightly differently (say, HTML5 datasets), jQuery makes them all just work the same way.
 		</div>
 	</div>
 	
@@ -512,7 +557,7 @@
 		<h2><em>Write Less, Do More</em></h2>
 		<div class="notes">
 			<p>I know we've covered a lot in a very short amount of time.
-			<p>I presented this not in the hopes of making you all jQuery experts today, but rather to highlight what jQuery excels at and perhaps dispel some myths about this tool.
+			<p>I presented this not in the hopes of making you all jQuery experts today, but rather to highlight what jQuery excels at, and perhaps dispel some myths about this tool.
 			<p>At very least, I hope you will recognize there is a very powerful tool available for use in your javascript toolkit, and maybe you'll start talking about it on your projects.
 		</div>
 	</div>
@@ -520,7 +565,7 @@
 	<div id="thanks" class="step">
 		<h3>Thanks</h3>
 		<p>Drew Tayman, Justin Grant</p>
-		<p>jQuery</p>
+		<p>jQuery, jQuery UI</p>
 		<p>impress.js (Bartek Szopka @bartaz)</p>
 		<div class="notes">
 			<p>[[Click through]]

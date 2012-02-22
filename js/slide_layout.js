@@ -29,6 +29,7 @@ steps = {
 
 	selectors: {x: -4500, y: 2200, scale: 3, rotate: -270 },
 	manipulation: {x: -4500, y: 5000, scale: 3, rotate: -270 },
+	manipulation_walkthrough: {x: -4500, y: 7800, scale: 3, rotate: -270 },
 
 	"3rd_party": {x: -1000, y: 5000, scale: 3 },
 	plugins: {x: -1000, y: 5400, scale: 3 },
@@ -43,6 +44,7 @@ steps = {
 	projects_small: {x: 5000, y: 5200, scale: 3 },
 	projects_efficient: {x: 5000, y: 5400, scale: 3 },
 	projects_interop: {x: 5000, y: 5600, scale: 3 },
+	projects_plugin: {x: 5000, y: 5800, scale: 3 },
 
 	outro: {x: -500, y: 1500, z: -500, scale: 3, rotate: {x: 45} },
 	thanks: {x: 500, y: 2000, z: 1500, scale: 3, rotate: {x: 55} },
