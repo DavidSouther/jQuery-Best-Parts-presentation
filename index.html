@@ -102,6 +102,13 @@
 	</div>
 
 <!-- Language features -->
+	<div id="features" class="step">
+		<h2>Language Features</h2>
+		<div class="notes">
+			<p>Let's move on to actual code that uses jQuery. I've pulled four useful features you'll see over and over again both in jQuery code, and other javascript libraries.
+		</div>
+	</div>
+
 	<div id="each_object" class="step">
 		<h3>$.each (object)</h3>
 		<iframe
@@ -110,7 +117,6 @@
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/pnybn/">http://jsfiddle.net/southerd/pnybn/</a></p>
 		<div class="notes">
-			<p>Let's move on to actual code that uses jQuery. I've pulled four useful features you'll see over and over again both in jQuery code, and other javascript libraries.
 			<p>We'll start with a couple specific examples of jQuery's each iterator.
 			<p>The method is considered static as {dollar}{dot}{each}, and it takes something to iterate over and a function to apply on each iteration.
 			<p>It can iterate both objects and arrays- here, we're looking at an object first.
@@ -147,7 +153,7 @@
 		<h3>$.proxy</h3>
 		<iframe
 			style="width: 100%; height: 300px"
-			src="http://jsfiddle.net/southerd/mXGjf/embedded/js/presentation/"
+			src="http://jsfiddle.net/southerd/mXGjf/embedded/js,result/presentation/"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
 		<p><a href="http://jsfiddle.net/southerd/mXGjf/">http://jsfiddle.net/southerd/mXGjf/</a></p>
 		<div class="notes">
@@ -192,17 +198,35 @@
 	<div id="widget" class="step">
 		<h3>$.widget (inheritance)</h3>
 		<iframe
-			style="width: 100%; height: 500px"
-			src="http://jsfiddle.net/southerd/-/embedded/"
+			style="width: 100%; height: 800px"
+			src="http://jsfiddle.net/southerd/ETt2L/embedded/js,result/presentation"
 			allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-		<p><a href="http://jsfiddle.net/southerd/-/">http://jsfiddle.net/southerd/-/</a></p>
+		<p><a href="http://jsfiddle.net/southerd/ETt2L/">http://jsfiddle.net/southerd/ETt2L/</a></p>
 		<div class="notes">
 			<p>Extend as a function is fairly simple, it just merges several objects together.
 			<p>To get inheritance, we want to use {dollar}{dot}{widget} from jquery ui.
 			<p>The name is a bit of a misnomer at first blush- widgets and plugins in jQuery are not necessarily for wider consumption, but just overloaded words to describe modular pieces of code here.
 			<p>This will require pulling in the jQuery UI project in addition to the jQuery project, but there are quite a few components in UI that we'll cover in a bit and you may want anyway.
-<!-- TODO -->
-
+			<p>This is one of the longer examples I have, but most is fairly self-explanatory.
+			<p>The Green here defines an object that will become the prototype for our widget.
+			<p>It maintains a list of colors, and sets an element's background color.
+			<p>Here, we use {dollar}{dot}{widget} to create a widget with this prototype.
+			<p>The {ui} is a namespace, and the {colorer} is the method we'll be calling.
+			<p>This colorer is fairly bland, though- it doesn't really do anything except set around waiting for its setter to get called.
+			<p>We're going to extend this widget and add mouse functionality to it, so whenever someone drags their mouse on this widget, it will change colors.
+			<p>Next we'll use {dolor}{dot}{extend} to create a new prototype.
+			<p>We use {extend} to copy all the new functions in this object, and all the fields on colorer's prototype, into a new object.
+			<p>Then we make another call to {dolor}{dot}{widget} to create our mouseified widget.
+			<p>Notice here we use an extra argument to UI's mouse helper.
+			<p>This defines a variety of useful mouse related functions we can attach to.
+			<p>Let's take a moment and look a bit closer at this ColorerMouse.
+			<p>{underscore}{init} is a lifecycle function in the Widget framework that acts as a constructor- it gets called every time a new widget is create.
+			<p>Destroy is the same, but for object descruction.
+			<p>Inside of these, we use {Function}{dot}{call} to call the base class' init and destroy since we overwrote them with the {extend} call, and don't want to lose what those do.
+			<p>mouseStart and mouseDrag are stub functions from {ui}{dot}{mouse} to override, as we've done.
+			<p>We then make two instances of this widget, one the default green; the other we pass in an array of reds.
+			<p>[[Click to results tab]]
+			<p>Here, we can see the mouse events.
 		</div>
 	</div>
 
@@ -600,6 +624,6 @@
 </script>
 <script src="js/default.js"></script>
 <script src="js/notes.js"></script>
-
+<script src="js/scroll.js"></script>
 </body>
 </html>
